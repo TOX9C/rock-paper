@@ -4,15 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>rock paper siccors</title>
-    <script src="j.js"></script>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div>score</div>
     <div>
-      <button onclick="playRound('rock')">🪨</button>
-      <button onclick="playRound('paper')">📃</button>
-      <button onclick="playRound('scissors')">✂︎</button>
+      <button onclick="getHumanChoice('rock')">🪨</button>
+      <button onclick="getHumanChoice('paper')">📃</button>
+      <button onclick="getHumanChoice('scissors')">✂︎</button>
     </div>
-    <div>your choice computer choice</div>
+    <div>
+      <div class="hidden">
+        <h1>YOU:</h1>
+        <h3 id="humanChoice">""</h3>
+      </div>
+      <div class="hidden">
+        <h1>COMPUTER:</h1>
+        <h3 id="computerChoice">""</h3>
+      </div>
+    </div>
+    <script src="j.js"></script>
   </body>
 </html>

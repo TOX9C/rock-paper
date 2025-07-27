@@ -1,7 +1,29 @@
+const humanUi = document.querySelector("#humanChoice");
+const computerUi = document.querySelector("#computerChoice");
 let humanScore = 0;
 let computerScore = 0;
 choices = ["rock", "paper", "scissors"];
 
+function changeUi(choice, ui) {
+  switch (choice) {
+    case "rock":
+      ui.textContent = "🪨";
+      break;
+    case "paper":
+      ui.textContent = "📃";
+      break;
+    case "scissors":
+      ui.textContent = "✂︎";
+      break;
+    default:
+      break;
+  }
+}
+function showChoiceBox() {
+  document
+    .querySelectorAll(".hidden")
+    .forEach((el) => el.classList.add("show"));
+}
 function getComputerChoice() {
   let choice = Math.floor(Math.random() * 3);
   return choices[choice];
@@ -9,9 +31,12 @@ function getComputerChoice() {
 function getHumanChoice(txt) {
   let computerChoice = getComputerChoice();
   let humanChoice = txt;
+  playRound(humanChoice, computerChoice);
+  changeUi(humanChoice, humanUi);
+  changeUi(computerChoice, computerUi);
+  showChoiceBox();
 }
-function playRound(humanChoice) {
-  let computerChoice = getComputerChoice();
+function playRound(humanChoice, computerChoice) {
   if (computerChoice == "rock") {
     switch (humanChoice) {
       case "rock":
