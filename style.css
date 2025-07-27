@@ -1,6 +1,33 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .hidden {
   visibility: hidden;
+  display: flex;
+  gap: 10px;
+  font-size: 22px;
 }
 .show {
   visibility: visible;
+}
+.scoreBox {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  font-size: 28px;
+}
+#result {
+  font-size: 62px;
+}
+.btnBox {
+  display: flex;
+  gap: 35px;
+}
+.btnBox button {
+  border: none;
+  background: #fff;
+  font-size: 72px;
 }
