@@ -7,10 +7,11 @@ function getComputerChoice() {
   return choices[choice];
 }
 function getHumanChoice(txt) {
-  let humanChoice = prompt("chose: rock,paper,scissors");
-  return humanChoice;
+  let computerChoice = getComputerChoice();
+  let humanChoice = txt;
 }
-function playRound(humanChoice, computerChoice) {
+function playRound(humanChoice) {
+  let computerChoice = getComputerChoice();
   if (computerChoice == "rock") {
     switch (humanChoice) {
       case "rock":
@@ -54,14 +55,4 @@ function playRound(humanChoice, computerChoice) {
         break;
     }
   }
-}
-function playGame() {
-  for (let i = 0; i < 5; i++) {
-    let computerChoice = getComputerChoice();
-    let humanChoice = getHumanChoice().toLowerCase();
-
-    playRound(humanChoice, computerChoice);
-  }
-  console.log("your Score is: ", humanScore);
-  console.log("Computer Score is: ", computerScore);
 }
